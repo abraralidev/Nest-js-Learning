@@ -1,5 +1,5 @@
 # Nest-js-Learning
- Guide to learn ot nest-js
+ Guide to learn nest-js
 
 ## Section-1:
 #### Install Nest-JS CLI
