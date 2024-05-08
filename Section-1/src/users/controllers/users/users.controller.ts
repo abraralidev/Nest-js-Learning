@@ -1,11 +1,13 @@
 import { Controller, Get, Post, Req, Res, Body, Param, Query, UsePipes, ValidationPipe, ParseIntPipe, ParseBoolPipe } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { CreateUserDto } from './dtos/CreateUser.dto';
+import { UsersService } from '../../services/users/users.service';
 
 
 
 @Controller('users')
 export class UsersController {
+    constructor(private usersService: UsersService) { }
     //================================================================================================   
     // Post API's
     // create user by passing data in body according to nestjs example of passing data in body with validation
@@ -29,6 +31,12 @@ export class UsersController {
 
     //================================================================================================   
     // Get API's
+    // get users by id according to nestjs example of passing id as a query parameter
+    @Get()
+    getUsers() {
+        console.log(this.usersService.fetchUsers());
+        return this.usersService.fetchUsers();
+    }
 
     // get users by id according to nestjs example of passing id as a query parameter
     @Get()
